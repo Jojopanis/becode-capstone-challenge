@@ -29,5 +29,5 @@ def write_json(result, filename='articles.json'):
 
 if __name__ == "__main__":
     with ThreadPoolExecutor() as executor:
-        result = executor.map(scrap_page, range(1, 101))
+        result = list(tqdm(executor.map(scrap_page, range(1, 101)), total=100))
     write_json(result)

@@ -16,7 +16,8 @@ def scrap_page(page_number):
             "slug": article["slug"],
             "title": article["title"],
             "category": article["dossierLabel"],
-            "date": article["publishedFrom"]}
+            "date": article["publishedFrom"],
+            "update": article["majorUpdatedAt"]}
         data_articles.append(article_data)
     return data_articles
 
